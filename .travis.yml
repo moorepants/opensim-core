@@ -29,7 +29,7 @@ install:
   ## Set up OpenSim. Travis already cloned it for us by this point.
   - cd ../
   # TODO BUILD_API_EXAMPLES?
-  - cmake . -DCMAKE_PREFIX_PATH=simbody-install -DCMAKE_CXX_FLAGS=-Werror
+  - cmake . -DSimTK_INSTALL_DIR=simbody-install -DCMAKE_CXX_FLAGS=-Werror
   - make -j8
 script:
   - ctest -j8 
