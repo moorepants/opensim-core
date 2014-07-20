@@ -310,14 +310,14 @@ IF("${SimTK_INSTALL_DIR}" STREQUAL "")
     # We assume the only case in which the user
     # wants us to search for Simbody is if they left SimTK_INSTALL_DIR empty.
     # If the user specifies an invalid SimTK_INSTALL_DIR by accident,
-    # we shouldn't let that fail silently and still search for 
+    # we shouldn't let that fail silently and still search for
     # Simbody elsewhere; they may never realize
     # we are not using their requested installation of Simbody.
     FIND_PACKAGE(Simbody ${SIMBODY_VERSION_TO_USE} QUIET
         NO_MODULE)
 ELSE()
     # Find the package using the user-specified path.
-    # NO_DEFAULT_PATH will cause find_package to only 
+    # NO_DEFAULT_PATH will cause find_package to only
     # look in the provided PATHS.
     FIND_PACKAGE(Simbody ${SIMBODY_VERSION_TO_USE} QUIET
         PATHS "${SimTK_INSTALL_DIR}" NO_MODULE NO_DEFAULT_PATH)
